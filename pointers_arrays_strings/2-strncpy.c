@@ -1,28 +1,27 @@
-#include "main.h"
+#include <stdio.h>
+#include <string.h>
 
 /**
  * _strncpy - copies a string
- * @dest: buffer storing the string copy
- * @src: source string
- * @n: maximum number of bytes to copy
  *
- * Description: Custom implementation of the strncpy behavior
- *              from the C standard library.
+ * @dest: pointer to an char
+ * @src: pointer to char
+ * @n: int
  *
- * Return: pointer to dest
+ * Return: dest
  */
+
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int i = strlen(src);
+	int j;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
+	for (j = 0 ; (j < n) && (j < i) ; j++)
+		dest[j] = src[j];
+	if (j == i)
 	{
-		dest[i] = src[i];
+		for ( ; i < n ; i++)
+			dest[i] = '\0';
 	}
-	for (; i < n; i++)
-	{
-		dest[i] = '\0';
-	}
-
 	return (dest);
 }
