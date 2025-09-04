@@ -1,3 +1,5 @@
+#include "main.h"
+#include <stdio.h>
 /**
 * _strncpy - copies a string
 * @dest: buffer where we copy the string
