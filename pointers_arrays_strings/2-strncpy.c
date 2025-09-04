@@ -10,18 +10,18 @@
  *
  * Return: dest
  */
-
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i = strlen(src);
-	int j;
-
-	for (j = 0 ; (j < n) && (j < i) ; j++)
-		dest[j] = src[j];
-	if (j == i)
-	{
-		for ( ; i < n ; i++)
-			dest[i] = '\0';
-	}
-	return (dest);
+int i = 0;
+while (i < n && src[i] != '\0')
+{
+dest[i] = src[i];
+i++;
+}
+while (i < n)
+{
+dest[i] = '\0';
+i++;
+}
+return (dest);
 }
