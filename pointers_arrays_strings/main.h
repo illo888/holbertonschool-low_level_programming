@@ -22,4 +22,5 @@ char *string_toupper(char *str);
 char *cap_string(char *);
 char *leet(char *s);
 char *_memset(char *s, char b, unsigned int n);
+void set_string(char **s, char *to);
 #endif /* MAIN_H */
