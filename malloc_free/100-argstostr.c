@@ -33,4 +33,3 @@ char *argstostr(int ac, char **av)
     str[pos] = '\0';
     return (str);
 }
-
