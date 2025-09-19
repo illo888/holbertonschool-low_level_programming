@@ -2,21 +2,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(int ac, char *av[])
+char *argstostr(int ac, char **av)
 {
-    char *s;
+    int i, j, k = 0, len = 0;
+    char *str;
 
-    s = argstostr(ac, av);
-    if (s == NULL)
+    if (ac == 0 || av == NULL)
+        return (NULL);
+
+    for (i = 0; i < ac; i++)
     {
-        return (1);
+        for (j = 0; av[i][j]; j++)
+            len++;
+        len++;
     }
-    printf("%s", s);
-    free(s);
-    return (0);
+
+    str = malloc(sizeof(char) * (len + 1));
+    if (str == NULL)
+        return (NULL);
+
+    for (i = 0; i < ac; i++)
+    {
+        for (j = 0; av[i][j]; j++)
+            str[k++] = av[i][j];
+        str[k++] = '\n';
+    }
+
+    str[k] = '\0';
+    return (str);
 }
